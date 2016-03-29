@@ -35,8 +35,8 @@ while(i <= x ):
         string = "http://gfy.com/member.php?u={}".format(t)
         driver.get(string)
 
-
-        f = open("/Users/andrewsyc/Desktop/gfyprofiles/{}.html".format(t),"wb+")
+        # make sure to pick the correct directory to save the files to
+        f = open("/directorytosave/{}.html".format(t),"wb+")
         f.write(driver.page_source)
         f.close()
 
