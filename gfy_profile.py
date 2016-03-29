@@ -6,21 +6,24 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 
-# x = 384000
+# x is the starting value, under 400k profiles at the time of this scrape
 x = 384000
-i = 33100
+# i is the starting value
+i = 1
 
 while(i <= x ):
-# for t in range(i, i+100):
+#Firefox used
     driver = webdriver.Firefox()
+    # base url
     driver.get("http://gfy.com")
 
     username = driver.find_element_by_id("navbar_username")
     password = driver.find_element_by_id("navbar_password")
 
-    username.send_keys("johnnyloadproductions")
+# password and username need to go into these values 
+    username.send_keys("username")
     time.sleep(1)
-    password.send_keys("Supermon12")
+    password.send_keys("password")
     time.sleep(1)
 
     login_form = driver.find_element_by_xpath("//input[@value='Log in']")
@@ -43,4 +46,4 @@ while(i <= x ):
 
 time.sleep(3)
 
-# driver.close()
+driver.close()
